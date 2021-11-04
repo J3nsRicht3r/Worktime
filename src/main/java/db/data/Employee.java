@@ -1,15 +1,27 @@
 package db.data;
 
 public class Employee {
-    private int ID;
-    private String FirstName;
-    private String LastName;
+    int EID;
+    String FirstName;
+    String LastName;
 
-    public Employee(int id, String firstname, String lastname) {
-        this.ID = id;
+    public Employee(String eid, String firstname, String lastname) {
+        this.EID = Integer.parseInt(eid);
         this.FirstName = firstname;
         this.LastName = lastname;
 
+    }
+
+    public int getEID() {
+        return EID;
+    }
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public String getLastName() {
+        return LastName;
     }
 }
 

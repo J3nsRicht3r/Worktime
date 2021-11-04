@@ -3,46 +3,37 @@ package db.read;
 import db.data.Employee;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
 public class EmployeeReadCsv {
-    int id;
-    String firstname;
-    String lastname;
+    private int eid = 0;
+    private int firstname = 1;
+    private int lastname = 2;
 
-    public ArrayList<Employee> ReadCsv() throws IOException {
-        String fileName = "employee.csv";
+    public ArrayList<Employee> ReadCsv() {
 
-        FileReader input = new FileReader(fileName);
-        try (BufferedReader fileReader = new BufferedReader(input)) {
-            String raw;
+        String filename = "D:\\Worktime\\src\\main\\resources\\employee.csv";
+        String raw;
+        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(new FileInputStream(filename)))) {
             ArrayList<Employee> employeelist = new ArrayList();
-
             raw = fileReader.readLine();
+
             while (raw != null) {
-                var tokens = raw.split(",");
-                if (tokens.length <= 0) {
-                    var employee = new Employee(
-                            id,
-                            firstname,
-                            lastname
-                    );
+                String[] tokens = raw.split(",");
+                if (tokens.length >= 0) {
+                    var employee = new Employee(tokens[eid], tokens[firstname], tokens[lastname]);
                     employeelist.add(employee);
                 }
                 raw = fileReader.readLine();
             }
             return employeelist;
-
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
-
-
     }
-
-
 }
