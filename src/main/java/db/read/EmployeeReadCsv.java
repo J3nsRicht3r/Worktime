@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 
 public class EmployeeReadCsv {
-    private int eid = 0;
-    private int firstname = 1;
-    private int lastname = 2;
+    private final int eid = 0;
+    private final int firstname = 1;
+    private final int lastname = 2;
 
     public ArrayList<Employee> ReadCsv() {
 

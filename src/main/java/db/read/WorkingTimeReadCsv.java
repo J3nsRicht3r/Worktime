@@ -10,14 +10,14 @@ import java.util.ArrayList;
 
 
 public class WorkingTimeReadCsv {
-    private int id = 0;
-    private int eid = 1;
-    private int datebeginn = 2;
-    private int dateend = 3;
-    private int timebeginn = 4;
-    private int timeend = 5;
-    private int worktime = 6;
-    private int breaktime = 7;
+    private final int id = 0;
+    private final int eid = 1;
+    private final int datebeginn = 2;
+    private final int dateend = 3;
+    private final int timebeginn = 4;
+    private final int timeend = 5;
+    private final int worktime = 6;
+    private final int breaktime = 7;
 
     public ArrayList<WorkingTime> ReadCsv() {
 
