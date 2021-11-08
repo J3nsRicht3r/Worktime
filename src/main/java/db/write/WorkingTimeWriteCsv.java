@@ -36,8 +36,8 @@ public class WorkingTimeWriteCsv {
 
     public void WriteCsv() {
         try {
-            String filename = "D:\\Worktime\\src\\main\\resources\\employee.csv";
-            File file = new File(filename);
+            String filepath = "D:\\Worktime\\src\\main\\resources\\employee.csv";
+            File file = new File(filepath);
             file.createNewFile();
             PrintWriter writeraw = new PrintWriter(new FileWriter(file, true), true);
             writeraw.println(raw);
